@@ -10,7 +10,7 @@ All code in the repo relies on python2.7 and `anaconda2`.
 
 To create a conda enviornment with all required packages, run `conda env create -f environment.yml`
 
-This project relies on [pytorch](http://pytorch.org/) and is based on InferSent. 
+This project relies on [pytorch](http://pytorch.org/) and is based on [InferSent](https://github.com/facebookresearch/InferSent). 
 
 ## Data
 We provide a bash script that can be used to downlod all data used in our experiments. The script also cleans and processes the data.
@@ -37,6 +37,8 @@ The most useful command line arguments are:
 ### Adversarial Learning Hyper-parameters
 - `adv_lambda` Controls the loss weight of the hypothesis only classifier
 - `adv_hyp_encoder_lambda` Controls the adversarial weight for the hypothesis only encoder
+- `nli_net_adv_hyp_encoder_lambda` Controls the adversarial weight for the hypothesis encoder in NLI net
+- `random_premise_frac` Controls the fraction of randome premises to use in NLI net
 
 To see a description of more command line arguments, run `src/train.py --help`.
 
