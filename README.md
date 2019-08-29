@@ -35,10 +35,21 @@ The most useful command line arguments are:
 - `remove_dup` 1 to remove duplicate hypothesis from train, 0 to keep them in. 0 is the default
 
 ### Adversarial Learning Hyper-parameters
-- `adv_lambda` Controls the loss weight of the hypothesis only classifier
+- `adv_lambda` Controls the loss weight of the hypothesis only classifier.  
 - `adv_hyp_encoder_lambda` Controls the adversarial weight for the hypothesis only encoder
 - `nli_net_adv_hyp_encoder_lambda` Controls the adversarial weight for the hypothesis encoder in NLI net
 - `random_premise_frac` Controls the fraction of randome premises to use in NLI net
+
+##### Mapping to hyper-parameters in the papers
+In *Don't Take the Premise for Granted (ACL)*:
+  - alpha refers to `adv_hyp_encoder_lambda` (Method 1) and `random_premise_frac` (Method 2)
+  - beta refers to `adv_lambda` (Method 1) and `nli_net_adv_hyp_encoder_lambda` (Method 2)
+  
+In *On Adversarial Removal of Hypothesis-only Bias (StarSem)*:
+  - λLoss refers to `adv_lambda`
+  - λEnc refers to `adv_hyp_encoder_lambda`
+  - λRand refers to `random_premise_frac`
+  - λRandAdv refers to `nli_net_adv_hyp_encoder_lambda`
 
 To see a description of more command line arguments, run `src/train.py --help`.
 
