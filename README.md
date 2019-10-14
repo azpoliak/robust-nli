@@ -14,7 +14,7 @@ This project relies on [pytorch](http://pytorch.org/) and is based on [InferSent
 
 ## Data
 We provide a bash script that can be used to downlod all data used in our experiments. The script also cleans and processes the data.
-To get and process the data, run `data/get_data.sh`.  
+To get and process the data, go in `data` and run `./get_data.sh`.  
 
 ## Training
 
