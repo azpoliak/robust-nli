@@ -34,7 +34,6 @@ mkdir mpe
 curl https://raw.githubusercontent.com/aylai/MultiPremiseEntailment/master/data/MPE/mpe_train.txt -o mpe/mpe_train.txt
 curl https://raw.githubusercontent.com/aylai/MultiPremiseEntailment/master/data/MPE/mpe_dev.txt -o mpe/mpe_dev.txt
 curl https://raw.githubusercontent.com/aylai/MultiPremiseEntailment/master/data/MPE/mpe_test.txt -o mpe/mpe_test.txt
-cd ../
 
 echo "Downloading add-1 RTE"
 mkdir add-one-rte
