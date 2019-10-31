@@ -10,7 +10,8 @@ def combine_premises(row):
        u'contradiction_judgments', u'gold_label'],
       dtype='object')
     '''
-    return " ".join([nltk.word_tokenize(row["premise%d"%(i)].split('/')[1]) for i in range(1,5)])
+    # return " ".join([nltk.word_tokenize(row["premise%d"%(i)].split('/')[1]) for i in range(1,5)])
+    return " ".join([" ".join(nltk.word_tokenize(row["premise%d"%(i)].split('/')[1])) for i in range(1,5)])
 
 for f in ["train", "dev", "test"]:
   line_count = -1
@@ -18,8 +19,8 @@ for f in ["train", "dev", "test"]:
 
   df = pd.read_csv("mpe/mpe_%s.txt" % (f), sep="\t")
   df['combined_premises'] = df.apply(combine_premises, axis=1)
-   
-  import pdb; pdb.set_trace()
+
+  # import pdb; pdb.set_trace()
   for line in open("mpe/mpe_%st.txt" % (f)):
     line_count += 1
     if line_count == 0:
@@ -31,7 +32,7 @@ for f in ["train", "dev", "test"]:
         lbls.append(line[-1].strip().split()[-1])
         hypoths.append(" ".join(nltk.word_tokenize(line[5].strip())))
         premises.append(" ".join(nltk.word_tokenize(line[i+1].split('/',1)[1].strip())))
-    
+
 
   if f == "dev":
     f = "val"
@@ -47,4 +48,3 @@ for f in ["train", "dev", "test"]:
 
   lbl_out.close()
   source_out.close()
-
