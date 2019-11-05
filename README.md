@@ -53,6 +53,25 @@ In *On Adversarial Removal of Hypothesis-only Bias (StarSem)*:
 
 To see a description of more command line arguments, run `src/train.py --help`.
 
+#### Hyper-parameters for transfer experiments
+These are the hyper-parameter values for the transfer experiments reported in table 2 of our ACL paper:
+
+| test set | adv_lambda | adv_hyp_encoder_lambda | random_premise_frac | nli_net_adv_hyp_encoder_lambda |
+| --- | --- | --- | --- | --- |
+| SNLI test | 0.1 | 0.2 | 0.05 | 0.05 |
+| SNLI hard | 0.1 | 0.2 | 0.05 | 0.05 |
+| GLUE | 1 | 0.05 | 0.1 | 0.05 |
+| MNLI mismatched | 1 | 0.05 | 0.1 | 0.05 |
+| MNLI matched | 0.4 | 0.1 | 0.1 | 0.05 |
+| JOCI test | 0.8 | 0.05 | 0.05 | 0.05 |
+| MPE test | 0.1 | 1 | 0.05 | 0.2 |
+| SICK test | 0.1 | 1 | 0.1 | 0.05 |
+| ADD-ONE-RTE test | 0.8 | 0.4 | 0.8 | 1 |
+| SCITAIL test | 0.05 | 0.8 | 0.1 | 0.1 |
+| DPR test | 1 | 0.2 | 0.05 | 0.4 |
+| SPRL test | 1 | 1 | 1 | 1 |
+| FNPLUS test | 0.8 | 1 | 0.2 | 0.2 |
+
 
 ## Bibligoraphy
 If you use this repo, please cite the two following papers:
